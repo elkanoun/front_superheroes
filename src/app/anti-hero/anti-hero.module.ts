@@ -5,6 +5,8 @@ import { ListComponent } from './pages/list/list.component';
 import { AntiHeroRoutingModule } from './anti-hero-routing.module';
 import { AntiHeroFormComponent } from './components/anti-hero-form/anti-hero-form.component';
 import { AntiHeroListComponent } from './components/anti-hero-list/anti-hero-list.component';
+import { MaterialModule } from '../material/material.module';
+import { AntiHeroCommandBarComponent } from './components/anti-hero-command-bar/anti-hero-command-bar.component';
 
 
 
@@ -13,12 +15,14 @@ import { AntiHeroListComponent } from './components/anti-hero-list/anti-hero-lis
     FormComponent,
     ListComponent,
     AntiHeroFormComponent,
-    AntiHeroListComponent
+    AntiHeroListComponent,
+    AntiHeroCommandBarComponent
   ],
 
   imports: [
     CommonModule,
-    AntiHeroRoutingModule
+    AntiHeroRoutingModule,
+    MaterialModule
   ]
   
 })

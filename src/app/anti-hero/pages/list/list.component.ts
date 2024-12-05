@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AntiHero } from '../../../core/models/anti-hero.interface';
+import { AntiHero } from '../../models/anti-hero.interface';
 
 @Component({
   selector: 'app-list',
@@ -32,8 +32,6 @@ export class ListComponent implements OnInit {
     
   }
 
-  selectAntiHero(antiHero: AntiHero){
-    
-  }
+ 
 
 }
