@@ -1,1 +1,18 @@
-<p>form works!</p>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm)">
+    <p>
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" formControlName="email"/>
+    </p>
+
+    <p>
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" formControlName="firstName"/>
+    </p>
+
+    <p>
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" formControlName="lastName"/>
+    </p>
+
+    <button type="submit">submit</button>
+</form>

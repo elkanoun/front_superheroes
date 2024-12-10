@@ -7,6 +7,7 @@ import { MaterialModule } from '../material/material.module';
 
 
 
+
 @NgModule({
   declarations: [
     FooterComponent
@@ -15,10 +16,14 @@ import { MaterialModule } from '../material/material.module';
   imports: [
     CommonModule,
     MaterialModule
+
+   
   ],
 
   exports: [
-    FooterComponent
+    FooterComponent,
+
+    
   ]
 })
 export class SharedModule { }

@@ -8,6 +8,7 @@ import { NavbarComponent } from './shared/layout/navbar/navbar.component';
 import { MaterialModule } from './material/material.module';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,11 @@ import { MaterialModule } from './material/material.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+
     MaterialModule
+    
+
+    
    
     
   ],

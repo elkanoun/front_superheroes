@@ -8,11 +8,11 @@ import { FormComponent } from './pages/form/form.component';
 const routes : Routes = [
   {
     path: "",
-    component: ListComponent
+    component: FormComponent
   },
   {
     path: "form",
-    component: FormComponent
+    component: ListComponent
   }
 ]
 
