@@ -1,9 +1,62 @@
-<form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm)">
-    <p>
-        <label for="email">Email</label>
-        <input type="text" id="email" name="email" formControlName="email"/>
-    </p>
 
+<mat-card>
+    <h2>Formulaire Dynamique</h2>
+  
+    <form [formGroup]="heroForm" (ngSubmit)="onSubmit(heroForm)">
+      <div formArrayName="items">
+        <div *ngFor="let item of items.controls; let i = index" [formGroupName]="i" class="form-item">
+
+          <mat-form-field appearance="outline">
+            <mat-label>firstName</mat-label>
+            <input matInput formControlName="firstName" placeholder="firstName">
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline">
+            <mat-label>lastName</mat-label>
+            <input matInput formControlName="lastName" placeholder="lastName">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>knownAs</mat-label>
+            <input matInput formControlName="knownAs" placeholder="knownAs">
+          </mat-form-field>
+
+          <div formGroupName="address">
+            <mat-form-field appearance="outline">
+                <mat-label>street</mat-label>
+                <input matInput formControlName="street" placeholder="street">
+              </mat-form-field>
+      
+              <mat-form-field appearance="outline">
+                <mat-label>city</mat-label>
+                <input matInput formControlName="city" placeholder="city">
+              </mat-form-field>
+    
+              <mat-form-field appearance="outline">
+                <mat-label>country</mat-label>
+                <input matInput formControlName="country" placeholder="country">
+              </mat-form-field>
+          </div>
+  
+          <button mat-icon-button color="warn" (click)="removeItem(i)" type="button">
+            <mat-icon>delete</mat-icon>
+          </button>
+
+        </div>
+      </div>
+  
+      <button mat-raised-button color="primary" (click)="addItem()" type="button">
+        Ajouter un champ
+      </button>
+      <button mat-raised-button color="accent" type="submit">Soumettre</button>
+    </form>
+</mat-card>
+
+
+
+<!-- formulaire réactive natif -->
+<!--
+<form [formGroup]="heroForm" (ngSubmit)="onSubmit(heroForm)">
     <p>
         <label for="firstName">First Name</label>
         <input type="text" id="firstName" name="firstName" formControlName="firstName"/>
@@ -14,5 +67,48 @@
         <input type="text" id="lastName" name="lastName" formControlName="lastName"/>
     </p>
 
-    <button type="submit">submit</button>
+    <p>
+        <label for="knownAs">Known As</label>
+        <input type="text" id="knownAs" name="lastName" formControlName="knownAs"/>
+    </p>
+
+    <div formGroupName="address">
+        <p>
+            <label for="street">Street</label>
+            <input type="text" id="street" name="street" formControlName="street"/>
+        </p>
+    
+        <p>
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" formControlName="city"/>
+        </p>
+    
+        <p>
+            <label for="country">Country</label>
+            <input type="text" id="country" name="country" formControlName="country"/>
+        </p>
+    </div>
+
+    <p><button type="submit">submit</button></p>     
 </form>
+-->
+
+
+
+<!-- formulaire réactive natif avec FormArray --> 
+<!--
+<form [formGroup]="heroForm" (ngSubmit)="onSubmit(heroForm)">
+    <ng-container formArrayName="powers">
+        <label for="tags">Tags</label>
+        <div class="input-group mb-3" *ngFor="let _ of powerFormArray.controls; index as i">
+            <input type="text" class="form-control" placeholder="Power Name" [formControlName]="i"/>
+            <button (click)="deletePower(i)" class="btn btn-danger" type="button">Delete</button>
+        </div>
+    
+            <button class="btn btn-info me-md-2" type="button" (click)="addPower()">Add</button>
+
+        <p><button type="submit">submit</button></p>
+    </ng-container>
+</form>
+-->
+
