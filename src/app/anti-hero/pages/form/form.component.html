@@ -1,4 +1,32 @@
+<app-anti-hero-form [selectedId]="id"></app-anti-hero-form>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <mat-card>
     <h2>Formulaire Dynamique</h2>
   
@@ -51,64 +79,11 @@
       <button mat-raised-button color="accent" type="submit">Soumettre</button>
     </form>
 </mat-card>
-
-
-
-<!-- formulaire réactive natif -->
-<!--
-<form [formGroup]="heroForm" (ngSubmit)="onSubmit(heroForm)">
-    <p>
-        <label for="firstName">First Name</label>
-        <input type="text" id="firstName" name="firstName" formControlName="firstName"/>
-    </p>
-
-    <p>
-        <label for="lastName">Last Name</label>
-        <input type="text" id="lastName" name="lastName" formControlName="lastName"/>
-    </p>
-
-    <p>
-        <label for="knownAs">Known As</label>
-        <input type="text" id="knownAs" name="lastName" formControlName="knownAs"/>
-    </p>
-
-    <div formGroupName="address">
-        <p>
-            <label for="street">Street</label>
-            <input type="text" id="street" name="street" formControlName="street"/>
-        </p>
-    
-        <p>
-            <label for="city">City</label>
-            <input type="text" id="city" name="city" formControlName="city"/>
-        </p>
-    
-        <p>
-            <label for="country">Country</label>
-            <input type="text" id="country" name="country" formControlName="country"/>
-        </p>
-    </div>
-
-    <p><button type="submit">submit</button></p>     
-</form>
 -->
 
 
 
-<!-- formulaire réactive natif avec FormArray --> 
-<!--
-<form [formGroup]="heroForm" (ngSubmit)="onSubmit(heroForm)">
-    <ng-container formArrayName="powers">
-        <label for="tags">Tags</label>
-        <div class="input-group mb-3" *ngFor="let _ of powerFormArray.controls; index as i">
-            <input type="text" class="form-control" placeholder="Power Name" [formControlName]="i"/>
-            <button (click)="deletePower(i)" class="btn btn-danger" type="button">Delete</button>
-        </div>
-    
-            <button class="btn btn-info me-md-2" type="button" (click)="addPower()">Add</button>
 
-        <p><button type="submit">submit</button></p>
-    </ng-container>
-</form>
--->
+
+
 
