@@ -8,12 +8,26 @@ import { FormComponent } from './pages/form/form.component';
 const routes : Routes = [
   {
     path: "",
-    component: FormComponent
+    component: ListComponent
+  },
+  {
+    path: "list",
+    component: ListComponent
   },
   {
     path: "form",
-    component: ListComponent
+    children: [
+      {
+        path: "",
+        component: FormComponent
+      },
+      {
+        path: ":id",
+        component: FormComponent
+      },
+    ]
   }
+  
 ]
 
 

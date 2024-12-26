@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { NavbarComponent } from './shared/layout/navbar/navbar.component';
 import { MaterialModule } from './material/material.module';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
 
 
 
@@ -18,8 +21,13 @@ import { MaterialModule } from './material/material.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MaterialModule,
 
-    MaterialModule
+    StoreModule.forRoot({}, {}),
+
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+
+    EffectsModule.forRoot([])
     
 
     

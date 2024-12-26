@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AntiHero } from '../../models/anti-hero.interface';
+import { TableActions } from '../../enums/table-actions.enum';
+import { Router } from '@angular/router';
+import { CommandBarActions } from '../../enums/command-bar-actions.enum';
 
 @Component({
   selector: 'app-list',
@@ -10,6 +13,7 @@ export class ListComponent implements OnInit {
    // sample data of anti-hero
    antiHeroes: AntiHero[] = [
     {
+      id: 1,
       firstName: "Eddie",
       lastName: "Brock",
       house: "New York",
@@ -24,13 +28,33 @@ export class ListComponent implements OnInit {
     {headerName: "Known As", fieldName: "knownAs"},
   ]
 
-  constructor(){
+  constructor(private router: Router){
 
   }
 
   ngOnInit(): void {
     
   }
+  //method selectAntiHero
+  selectAntiHero(data: {antiHero: AntiHero, action: TableActions}){
+    this.router.navigate(['anti-heroes', 'form', data.antiHero.id]);
+  }
+
+  //method executeCommandBarAction
+  executeCommandBarAction(action: CommandBarActions){
+    switch(action){
+      case CommandBarActions.Create: {
+        this.router.navigate(['anti-heroes', 'form']);
+        return;
+      }
+      case CommandBarActions.DeleteAll: {
+        return;
+      }
+      default: ""
+    }
+  }
+
+  
 
  
 
